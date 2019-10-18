@@ -37,7 +37,7 @@ def get_and_save_args(parser):
     for k, v in current_config.items():
         if k in default_config:
             if (v != default_config[k]) and (v is not None):
-                print(f"Updating:  {k}: {default_config[k]} (default) ----> {v}")
+                print("Updating:  {k}: {default_config[k]} (default) ----> {v}".format())
                 default_config[k] = v
     yaml.dump(default_config, open('./current_configs.yaml', 'w'), indent=4, Dumper=yaml.RoundTripDumper)
     return default_config
